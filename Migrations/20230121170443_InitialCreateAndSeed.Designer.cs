@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Dexter.Migrations
 {
     [DbContext(typeof(DexterDbContext))]
-    [Migration("20230121154207_AddSeedData")]
-    partial class AddSeedData
+    [Migration("20230121170443_InitialCreateAndSeed")]
+    partial class InitialCreateAndSeed
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -151,7 +151,7 @@ namespace Dexter.Migrations
 
                     b.HasKey("pokedex_number");
 
-                    b.ToTable("Blogs");
+                    b.ToTable("Pokemons");
 
                     b.HasData(
                         new

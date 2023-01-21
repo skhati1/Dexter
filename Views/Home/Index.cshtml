@@ -1,7 +1,17 @@
-﻿@{
+﻿@model IEnumerable<Pokemon>
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
+
+    @foreach (var item in Model)
+    {
+        <div>
+            <span>@Html.DisplayFor(modelItem => item.pokedex_number)</span>
+            <span>@Html.DisplayFor(modelItem => item.name)</span>
+        </div>
+    }
 </div>

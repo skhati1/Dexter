@@ -148,7 +148,7 @@ namespace Dexter.Migrations
 
                     b.HasKey("pokedex_number");
 
-                    b.ToTable("Blogs");
+                    b.ToTable("Pokemons");
 
                     b.HasData(
                         new

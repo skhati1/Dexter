@@ -9,7 +9,7 @@ namespace Dexter
 {
     public class DexterDbContext : DbContext
     {
-        public DbSet<Pokemon> Blogs { get; set; }
+        public DbSet<Pokemon> Pokemons { get; set; }
 
         public string SqliteDbPath { get; }
 

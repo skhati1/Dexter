@@ -1,7 +1,11 @@
+using Dexter;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddTransient<DexterDbContext>();
 
 var app = builder.Build();
 
