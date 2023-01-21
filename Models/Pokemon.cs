@@ -26,15 +26,15 @@ namespace Dexter.Models
         public int base_egg_steps { get; set; }
         public int base_happiness { get; set; }
         public int base_total { get; set; }
-        public int capture_rate { get; set; }
+        public string capture_rate { get; set; }
         public string? classfication { get; set; }
         public int defense { get; set; }
-        public int experience_growth { get; set; }
-        public double height_m { get; set; }
+        public Int32 experience_growth { get; set; }
+        public string height_m { get; set; }
         public int hp { get; set; }
         public string japanese_name { get; set; }
         public string name { get; set; }
-        public decimal percentage_male { get; set; }
+        public string? percentage_male { get; set; }
         [Key]
         public int pokedex_number { get; set; }
         public int sp_attack { get; set; }
@@ -42,7 +42,7 @@ namespace Dexter.Models
         public int speed { get; set; }
         public string type1 { get; set; }
         public string type2 { get; set; }
-        public decimal weight_kg { get; set; }
+        public string weight_kg { get; set; }
         public int generation { get; set; }
         public int is_legendary { get; set; }
         public bool Legendary => is_legendary == 1;
@@ -74,22 +74,22 @@ namespace Dexter.Models
             newPokemon.base_egg_steps = Convert.ToInt16(values[20]);
             newPokemon.base_happiness = Convert.ToInt16(values[21]);
             newPokemon.base_total = Convert.ToInt16(values[22]);
-            newPokemon.capture_rate = Convert.ToInt16(values[23]);
+            newPokemon.capture_rate = Convert.ToString(values[23]);
             newPokemon.classfication = Convert.ToString(values[24]);
             newPokemon.defense = Convert.ToInt16(values[25]);
-            newPokemon.experience_growth = Convert.ToInt16(values[26]);
-            newPokemon.height_m = Convert.ToInt16(values[27]);
+            newPokemon.experience_growth = Convert.ToInt32(values[26]);
+            newPokemon.height_m = Convert.ToString(values[27]);
             newPokemon.hp = Convert.ToInt16(values[28]);
             newPokemon.japanese_name = Convert.ToString(values[29]);
             newPokemon.name = Convert.ToString(values[30]);
-            newPokemon.percentage_male = Convert.ToDecimal(values[31]);
+            newPokemon.percentage_male = Convert.ToString(values[31]);
             newPokemon.pokedex_number = Convert.ToInt16(values[32]);
             newPokemon.sp_attack = Convert.ToInt16(values[33]);
             newPokemon.sp_defense = Convert.ToInt16(values[34]);
             newPokemon.speed = Convert.ToInt16(values[35]);
             newPokemon.type1 = Convert.ToString(values[36]);
             newPokemon.type2 = Convert.ToString(values[37]);
-            newPokemon.weight_kg = Convert.ToDecimal(values[38]);
+            newPokemon.weight_kg = Convert.ToString(values[38]);
             newPokemon.generation = Convert.ToInt16(values[39]);
             newPokemon.is_legendary = Convert.ToInt16(values[40]);
             return newPokemon;
