@@ -1,9 +1,15 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Globalization;
 
 namespace Dexter.Models
 {
     public class Pokemon
     {
+        private TextInfo _textInfo;
+        public Pokemon()
+        {
+            _textInfo = new CultureInfo("en-US", false).TextInfo;
+        }
         public double against_bug { get; set; }
         public double against_dark { get; set; }
         public double against_dragon { get; set; }
@@ -42,6 +48,10 @@ namespace Dexter.Models
         public int speed { get; set; }
         public string type1 { get; set; }
         public string type2 { get; set; }
+        public string TypesString
+        {
+            get => $"{_textInfo.ToTitleCase(type1)} {(type2.Length > 0 ? " and " + _textInfo.ToTitleCase(type2) : string.Empty)}";
+        }
         public string weight_kg { get; set; }
         public int generation { get; set; }
         public int is_legendary { get; set; }

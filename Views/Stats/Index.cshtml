@@ -1,8 +1,41 @@
-﻿@{
+﻿@model Statistics
+@{
     ViewData["Title"] = "Stats";
 }
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+
+    // We use Google Charts and corecharts package to show seamless JS integration and our C# model data
+    google.charts.load('current', { 'packages': ['corechart'] });
+    google.charts.setOnLoadCallback(drawCharts);
+
+    function drawCharts() {
+        @foreach (var chart in Model.Data)
+        {
+            @:var data = new google.visualization.DataTable();
+            @:data.addColumn("string", "@chart.XLabel");
+            @:data.addColumn("number", "@chart.YLabel");
+
+            @for(int i = 0; i < chart.YAxisValues.Count; i++)
+            {
+            @:data.addRow(["@chart.XAxisValues[i]", @chart.YAxisValues[i]]);
+            }
+            @:var options = {"title": "@chart.ChartTitle", "width": 900, "height": 800 };
+
+            @:var chart = new google.visualization.PieChart(document.getElementById("chart_div_@chart.ChartId"));
+            @:chart.draw(data, options);
+        }
+    }
+
+</script>
+
 
 <div class="text-center">
     <h1 class="display-4">Stats</h1>
-    <!--Use this to show some graphs - Distribution of pokemon types - Explore Each Pokemon->
+    <!--Use this to show some graphs - Distribution of pokemon types - Explore Each Pokemon -->
+    @foreach (var chart in Model.Data)
+    {
+        <div id="chart_div_@chart.ChartId"></div>
+    }
+
 </div>

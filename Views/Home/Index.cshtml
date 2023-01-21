@@ -7,11 +7,7 @@
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
 
-    @foreach (var item in Model)
-    {
-        <div>
-            <span>@Html.DisplayFor(modelItem => item.pokedex_number)</span>
-            <span>@Html.DisplayFor(modelItem => item.name)</span>
-        </div>
-    }
+    <h3>This project was inspired by <a href="https://www.nme.com/news/gaming-news/japans-official-water-ambassador-is-a-pokemon-3001453" target="_blank">Water Day in Japan</a> as well as the developer's affinity towards video games and Pokemon!</h3>
+    <h4>This App maintains an internal database that consists of: <br /><br /><b>@Model.Count()</b> Pokemons!<br /></h4>
+    <h4>Enjoy! </h4>
 </div>

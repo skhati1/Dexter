@@ -21,11 +21,15 @@ namespace Dexter
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            /* This code was used to generate the intial migration which is now stored in the migration file itself
+             * 
+            
             List<Pokemon> seedData = File.ReadAllLines("seed_input.csv")
-                                           .Skip(1)
-                                           .Select(v => Pokemon.FromCsv(v))
-                                           .ToList();
+                                            .Skip(1)
+                                            .Select(v => Pokemon.FromCsv(v))
+                                            .ToList();
             modelBuilder.Entity<Pokemon>().HasData(seedData.ToArray());
+            */
         }
         
         // Create Sqlite DB on desktop

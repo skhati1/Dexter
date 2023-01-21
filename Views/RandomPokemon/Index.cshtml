@@ -1,8 +1,39 @@
-﻿@{
+﻿@model Pokemon
+
+@{
     ViewData["Title"] = "Stats";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Random Pokemon</h1>
+    <h1 class="display-4">Selected Random Pokemon</h1>
     <!-- Use this to fetch a random pokemon of the day from DB and show details about it. Unit Test randomness -->
+    <div id="pokemon-report">
+        <h2>@Model.pokedex_number | @Model.name | @Model.japanese_name</h2>
+        <br />
+        <h3>Type: @Model.TypesString</h3>
+        <br />
+        <p>This is a @Model.classfication</p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <td scope="col">HP</td>
+                    <td scope="col">Attack</td>
+                    <td scope="col">Special Attack</td>
+                    <td scope="col">Defense</td>
+                    <td scope="col">Special Defense</td>
+                    <td scope="col">Speed</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td scope="row">@Model.hp</td>
+                    <td scope="row">@Model.attack</td>
+                    <td scope="row">@Model.sp_attack</td>
+                    <td scope="row">@Model.defense</td>
+                    <td scope="row">@Model.sp_defense</td>
+                    <td scope="row">@Model.speed</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
