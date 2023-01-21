@@ -1,9 +1,9 @@
-﻿namespace Dexter.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Dexter.Models
 {
     public class Pokemon
     {
-        public int pokedex_number { get; set; }
-        public string[] abilities { get; set; }
         public double against_bug { get; set; }
         public double against_dark { get; set; }
         public double against_dragon { get; set; }
@@ -35,6 +35,8 @@
         public string japanese_name { get; set; }
         public string name { get; set; }
         public decimal percentage_male { get; set; }
+        [Key]
+        public int pokedex_number { get; set; }
         public int sp_attack { get; set; }
         public int sp_defense { get; set; }
         public int speed { get; set; }
@@ -43,5 +45,54 @@
         public decimal weight_kg { get; set; }
         public int generation { get; set; }
         public int is_legendary { get; set; }
-}
+        public bool Legendary => is_legendary == 1;
+
+        // Since this is a simple model mapping, doing it manually vs using a library like AutoMapper
+        public static Pokemon FromCsv(string csvLine)
+        {
+            string[] values = csvLine.Split(',');
+            Pokemon newPokemon = new Pokemon();
+            newPokemon.against_bug = Convert.ToDouble(values[1]);
+            newPokemon.against_dark = Convert.ToDouble(values[2]);
+            newPokemon.against_dragon = Convert.ToDouble(values[3]);
+            newPokemon.against_electric = Convert.ToDouble(values[4]);
+            newPokemon.against_fairy = Convert.ToDouble(values[5]);
+            newPokemon.against_fight = Convert.ToDouble(values[6]);
+            newPokemon.against_fire = Convert.ToDouble(values[7]);
+            newPokemon.against_flying = Convert.ToDouble(values[8]);
+            newPokemon.against_ghost = Convert.ToDouble(values[9]);
+            newPokemon.against_grass = Convert.ToDouble(values[10]);
+            newPokemon.against_ground = Convert.ToDouble(values[11]);
+            newPokemon.against_ice = Convert.ToDouble(values[12]);
+            newPokemon.against_normal = Convert.ToDouble(values[13]);
+            newPokemon.against_poison = Convert.ToDouble(values[14]);
+            newPokemon.against_psychic = Convert.ToDouble(values[15]);
+            newPokemon.against_rock = Convert.ToDouble(values[16]);
+            newPokemon.against_steel = Convert.ToDouble(values[17]);
+            newPokemon.against_water = Convert.ToDouble(values[18]);
+            newPokemon.attack = Convert.ToInt16(values[19]);
+            newPokemon.base_egg_steps = Convert.ToInt16(values[20]);
+            newPokemon.base_happiness = Convert.ToInt16(values[21]);
+            newPokemon.base_total = Convert.ToInt16(values[22]);
+            newPokemon.capture_rate = Convert.ToInt16(values[23]);
+            newPokemon.classfication = Convert.ToString(values[24]);
+            newPokemon.defense = Convert.ToInt16(values[25]);
+            newPokemon.experience_growth = Convert.ToInt16(values[26]);
+            newPokemon.height_m = Convert.ToInt16(values[27]);
+            newPokemon.hp = Convert.ToInt16(values[28]);
+            newPokemon.japanese_name = Convert.ToString(values[29]);
+            newPokemon.name = Convert.ToString(values[30]);
+            newPokemon.percentage_male = Convert.ToDecimal(values[31]);
+            newPokemon.pokedex_number = Convert.ToInt16(values[32]);
+            newPokemon.sp_attack = Convert.ToInt16(values[33]);
+            newPokemon.sp_defense = Convert.ToInt16(values[34]);
+            newPokemon.speed = Convert.ToInt16(values[35]);
+            newPokemon.type1 = Convert.ToString(values[36]);
+            newPokemon.type2 = Convert.ToString(values[37]);
+            newPokemon.weight_kg = Convert.ToDecimal(values[38]);
+            newPokemon.generation = Convert.ToInt16(values[39]);
+            newPokemon.is_legendary = Convert.ToInt16(values[40]);
+            return newPokemon;
+        }
+    }
 }
