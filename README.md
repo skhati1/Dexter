@@ -42,3 +42,4 @@ Dexter will now be up and running at `localhost:7106` by default
 ## TODO
 
 Validation Test
+Ensure All Unit Tests Pass when running together vs individually
