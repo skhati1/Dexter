@@ -1,17 +1,20 @@
-﻿@model Pokemon
+﻿@using System.Reflection;
+@using System.Globalization;
+@model Pokemon
 
 @{
     ViewData["Title"] = "Pokedex Page";
+    var textInfo = new CultureInfo("en-US", false).TextInfo;
 }
 
 <div class="text-center">
     <table class="table">
         <tr>
             <td>
-                <p>@Model?.name | @Model?.japanese_name</p>
+                <p>@Model?.name | @Model?.japanese_name. A @Model.TypesString Pokemon!</p>
                 <img src="@Url.Content(Model?.ImagePath)" alt="Pokemon Image" height="400" width="400" />
             </td>
-            <td>
+            <td style="vertical-align: middle">
                 <table class="table">
                     <thead>
                         <tr>
@@ -37,4 +40,29 @@
             </td>
         </tr>
     </table>
+    <p>Height: @Model.height_m meters | Weight: @Model.weight_kg kg</p>
+    <p>This is a @Model.classfication</p>
+    <p>Capture Rate: @Model.capture_rate</p>
+
+    <!-- Use Reflection to Show Weakness and Strengths -->
+    
+    <table class="table">
+        <thead>
+            <tr>
+                <td>Type</td>
+                <td>Effectiveness</td>
+            </tr>
+        </thead>
+    @{Type type = @Model.GetType();}
+    @{PropertyInfo[] props = type.GetProperties();}
+    @{var matchup = new Dictionary<string, string>();}
+    @foreach (var prop in props.Where(p => p.Name.StartsWith("against_")))
+    {
+        <tr>
+            <td>@textInfo.ToTitleCase(prop.Name.Replace("against_", ""))</td>
+            <td>x @prop.GetValue(Model)</td>
+        </tr>
+    }
+    </table>
+   
 </div>

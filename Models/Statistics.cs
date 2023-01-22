@@ -1,9 +1,15 @@
 ﻿namespace Dexter.Models
 {
+    public enum TypeOfChart
+    {
+        PieChart,
+        BarChart
+    }
     public class DexterChart
     {
         public string ChartId { get; set; }
-        public string ChartType { get; set; }
+        public TypeOfChart ChartType { get; set; }
+        public bool Is3D { get; set; } // Applies to Pie Chart
         public string ChartLabel { get; set; }
         public string ChartTitle { get; set; }
         public List<string> XAxisValues { get; set; }

@@ -21,8 +21,18 @@
             @:data.addRow(["@chart.XAxisValues[i]", @chart.YAxisValues[i]]);
             }
             @:var options = {"title": "@chart.ChartTitle", "width": 900, "height": 800 };
-
-            @:var chart = new google.visualization.PieChart(document.getElementById("chart_div_@chart.ChartId"));
+            @if (chart.Is3D)
+            {
+                @:options.is3D = true;
+            }
+        @if (chart.ChartType == TypeOfChart.PieChart)
+            {
+                @:var chart = new google.visualization.PieChart(document.getElementById("chart_div_@chart.ChartId"));
+            }
+            else if (chart.ChartType == TypeOfChart.BarChart)
+            {
+                @:var chart = new google.visualization.BarChart(document.getElementById("chart_div_@chart.ChartId"));
+            }
             @:chart.draw(data, options);
         }
     }
@@ -31,11 +41,13 @@
 
 
 <div class="text-center">
-    <h1 class="display-4">Stats</h1>
+    <h1 class="display-4">Three Noteworthy Stats</h1>
     <!--Use this to show some graphs - Distribution of pokemon types - Explore Each Pokemon -->
     @foreach (var chart in Model.Data)
     {
         <div id="chart_div_@chart.ChartId"></div>
+        <span>@chart.ChartLabel</span>
+        <hr />
     }
 
 </div>
