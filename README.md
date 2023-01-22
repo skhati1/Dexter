@@ -26,18 +26,18 @@ Dexter will now be up and running at `localhost:7106` by default
 ## Pages
 
 #### Home Page
-![Home](./Docs/home.jpg)
+![Home](https://github.com/skhati1/Dexter/blob/main/Docs/home.png)
 
 #### Stats Page
-![Stats1](./Docs/stats1.jpg)
-![Stats2](./Docs/stats2.jpg)
-![Stats3](./Docs/stats3.jpg)
+![Stats1](https://github.com/skhati1/Dexter/blob/main/Docs/stats1.jpg)
+![Stats2](https://github.com/skhati1/Dexter/blob/main/Docs/stats2.jpg)
+![Stats3](https://github.com/skhati1/Dexter/blob/main/Docs/stats3.jpg)
 
 #### Random Page
-![Random](./Docs/random.jpg)
+![Random](https://github.com/skhati1/Dexter/blob/main/Docs/random.jpg)
 
 #### Pokedex Page
-![Pokedex](./Docs/pokedex.jpg)
+![Pokedex](https://github.com/skhati1/Dexter/blob/main/Docs/pokedex.jpg)
 
 ## TODO
 
