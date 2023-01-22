@@ -1,15 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Globalization;
 
 namespace Dexter.Models
 {
     public class Pokemon
     {
-        private TextInfo _textInfo;
-        public Pokemon()
-        {
-            _textInfo = new CultureInfo("en-US", false).TextInfo;
-        }
         public int X2AndX4WeaknessCount
         {
             get
@@ -58,13 +54,13 @@ namespace Dexter.Models
         public int base_egg_steps { get; set; }
         public int base_happiness { get; set; }
         public int base_total { get; set; }
-        public string capture_rate { get; set; }
+        public string? capture_rate { get; set; }
         public string? classfication { get; set; }
         public int defense { get; set; }
         public Int32 experience_growth { get; set; }
-        public string height_m { get; set; }
+        public string? height_m { get; set; }
         public int hp { get; set; }
-        public string japanese_name { get; set; }
+        public string? japanese_name { get; set; }
         public string name { get; set; }
         public string? percentage_male { get; set; }
         [Key]
@@ -73,15 +69,14 @@ namespace Dexter.Models
         public int sp_defense { get; set; }
         public int speed { get; set; }
         public string type1 { get; set; }
-        public string type2 { get; set; }
+        public string? type2 { get; set; }
         public string TypesString
         {
-            get => $"{_textInfo.ToTitleCase(type1)} {(type2.Length > 0 ? " and " + _textInfo.ToTitleCase(type2) : string.Empty)}";
+            get => $"{type1.ToTitleCase()} {(type2?.Length > 0 ? " and " + type2.ToTitleCase() : "")}";
         }
-        public string weight_kg { get; set; }
+        public string? weight_kg { get; set; }
         public int generation { get; set; }
         public int is_legendary { get; set; }
-        public bool Legendary => is_legendary == 1;
         public string ImagePath => $"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{pokedex_number}.png";
 
         // Since this is a simple model mapping, doing it manually vs using a library like AutoMapper

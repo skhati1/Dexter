@@ -22,13 +22,13 @@ namespace Dexter.Controllers
             Statistics result = new Statistics();
 
             // Top Ten Fastest Legendary Pokemon 
-            result.AddDexterChart(_data.GetTenFastestLegendaryPokemon(allPokemons));
+            result.AddDexterChart(_data.GetTenFastestLegendaryPokemon());
 
             // Distribution of Primary Types across all Pokemon
-            result.AddDexterChart(_data.GetTypePercentDistribution(allPokemons));
+            result.AddDexterChart(_data.GetTypePercentDistribution());
 
             // Top Ten Pokemon with most weaknesses
-            result.AddDexterChart(_data.GetTenMostWeakestPokemon(allPokemons));
+            result.AddDexterChart(_data.GetWeakestPokemonByType());
 
             return View(result);
         }

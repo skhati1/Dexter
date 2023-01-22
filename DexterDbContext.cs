@@ -11,12 +11,15 @@ namespace Dexter
     {
         public DbSet<Pokemon> Pokemons { get; set; }
 
-        public string SqliteDbPath { get; }
+        public string? SqliteDbPath { get; }
 
         public DexterDbContext()
         {
             var folder = Environment.SpecialFolder.Desktop;
             SqliteDbPath = System.IO.Path.Join(Environment.GetFolderPath(folder), "dexter.db");
+        }
+        public DexterDbContext(DbContextOptions dbContextOptions) : base(dbContextOptions)
+        {
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -34,6 +37,11 @@ namespace Dexter
         
         // Create Sqlite DB on desktop
         protected override void OnConfiguring(DbContextOptionsBuilder options)
-            => options.UseSqlite($"Data Source={SqliteDbPath}");
+        {
+            if (!options.IsConfigured)
+            {
+                options.UseSqlite($"Data Source={SqliteDbPath}");
+            }
+        }
     }
 }

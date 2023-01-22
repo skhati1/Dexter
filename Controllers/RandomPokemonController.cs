@@ -15,16 +15,11 @@ namespace Dexter.Controllers
             _context = context;
             _rand = new Random();
         }
-        protected Pokemon GetRandomPokemon()
+        public IActionResult Index()
         {
             var allPokemons = _context.Pokemons.ToList();
             var randomIndex = _rand.Next(0, allPokemons.Count() - 1);
             var randomPokemon = allPokemons.First(p => p.pokedex_number == randomIndex);
-            return randomPokemon;
-        }
-        public IActionResult Index()
-        {
-            var randomPokemon = GetRandomPokemon();
             return View("Index", randomPokemon);
         }
     }

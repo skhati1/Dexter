@@ -7,15 +7,15 @@
     }
     public class DexterChart
     {
-        public string ChartId { get; set; }
+        public string? ChartId { get; set; }
         public TypeOfChart ChartType { get; set; }
         public bool Is3D { get; set; } // Applies to Pie Chart
-        public string ChartLabel { get; set; }
-        public string ChartTitle { get; set; }
+        public string? ChartLabel { get; set; }
+        public string? ChartTitle { get; set; }
         public List<string> XAxisValues { get; set; }
         public string XLabel { get; set; }
         public List<int> YAxisValues { get; set; }
-        public string YLabel { get; set; }
+        public string? YLabel { get; set; }
         public int Width { get; set; }
         public int Height { get; set; }
     }

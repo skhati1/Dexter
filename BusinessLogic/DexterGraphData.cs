@@ -4,10 +4,15 @@ namespace Dexter.BusinessLogic
 {
     public class DexterGraphData
     {
-        public DexterChart GetTenFastestLegendaryPokemon(List<Pokemon> allPokemons)
+        private readonly DexterDbContext _context;
+
+        public DexterGraphData(DexterDbContext context) {
+            _context = context;
+        }
+        public DexterChart GetTenFastestLegendaryPokemon()
         {
-            var groupedTypes = allPokemons
-                .Where(p => p.Legendary)
+            var groupedTypes = _context.Pokemons
+                .Where(p => p.is_legendary == 1)
                 .OrderByDescending(p => p.speed)
                 .Take(10)
                 .ToList();
@@ -27,12 +32,13 @@ namespace Dexter.BusinessLogic
             };
         }
 
-        public DexterChart GetTenMostWeakestPokemon(List<Pokemon> allPokemons)
+        public DexterChart GetWeakestPokemonByType()
         {
             // To get the pokemons with most x2 weaknesses,
             // we add all values of against_ columns
             // and sort by descending
-            var sortedPokemons = allPokemons
+            var sortedPokemons = _context.Pokemons
+                .AsEnumerable()
                 .GroupBy(p => p.X2AndX4WeaknessCount)
                 .OrderByDescending(item => item.Key)
                 .Take(5)
@@ -52,12 +58,13 @@ namespace Dexter.BusinessLogic
             };
         }
 
-        public DexterChart GetTypePercentDistribution(List<Pokemon> allPokemons)
+        public DexterChart GetTypePercentDistribution()
         {
-            var groupedTypes = allPokemons
+            var groupedTypes = _context.Pokemons
                 .Select(p => p.type1)
+                .AsEnumerable()
                 .GroupBy(p => p)
-                .ToList();
+                .AsEnumerable();
 
             return new DexterChart()
             {
