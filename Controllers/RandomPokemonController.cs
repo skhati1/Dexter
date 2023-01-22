@@ -24,7 +24,8 @@ namespace Dexter.Controllers
         }
         public IActionResult Index()
         {
-            return View("Index", GetRandomPokemon());
+            var randomPokemon = GetRandomPokemon();
+            return View("Index", randomPokemon);
         }
     }
 }

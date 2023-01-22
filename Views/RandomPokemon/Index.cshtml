@@ -12,6 +12,8 @@
         <br />
         <h3>Type: @Model.TypesString</h3>
         <br />
+        <img src="@Url.Content(Model.ImagePath)" alt="Image of the Pokemon @Model.name" height="400" width="400" />
+        <a href="/Pokedex/@Model.pokedex_number">View Pokedex Entry</a>
         <p>This is a @Model.classfication</p>
         <table class="table">
             <thead>

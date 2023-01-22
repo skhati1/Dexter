@@ -1,13 +1,28 @@
-﻿@model IEnumerable<Pokemon>
+﻿@model List<Pokemon>
 
 @{
     ViewData["Title"] = "Home Page";
 }
+
+<script>
+    function navigateToPokedex(id) {
+        location.href = "Pokedex/" + id
+    }
+</script>
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
 
     <h3>This project was inspired by <a href="https://www.nme.com/news/gaming-news/japans-official-water-ambassador-is-a-pokemon-3001453" target="_blank">Water Day in Japan</a> as well as the developer's affinity towards video games and Pokemon!</h3>
     <h4>This App maintains an internal database that consists of: <br /><br /><b>@Model.Count()</b> Pokemons!<br /></h4>
-    <h4>Enjoy! </h4>
+    
+    <label>Select a Pokemon to Review:</label><br />
+
+    <select name="pokemonDropdown" id="pokemonDropdown" onchange="location.href='Pokedex/'+this.value">
+        @for(int i = 0; i < Model.Count(); i++)
+        {
+            <option value="@Model[i].pokedex_number">@Model[i].pokedex_number : @Model[i].name</option>
+        }
+    </select>
+    <br /><br />
 </div>

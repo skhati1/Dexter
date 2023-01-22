@@ -1,0 +1,40 @@
+﻿@model Pokemon
+
+@{
+    ViewData["Title"] = "Pokedex Page";
+}
+
+<div class="text-center">
+    <table class="table">
+        <tr>
+            <td>
+                <p>@Model?.name | @Model?.japanese_name</p>
+                <img src="@Url.Content(Model?.ImagePath)" alt="Pokemon Image" height="400" width="400" />
+            </td>
+            <td>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <td scope="col">HP</td>
+                            <td scope="col">Attack</td>
+                            <td scope="col">Special Attack</td>
+                            <td scope="col">Defense</td>
+                            <td scope="col">Special Defense</td>
+                            <td scope="col">Speed</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td scope="row">@Model?.hp</td>
+                            <td scope="row">@Model?.attack</td>
+                            <td scope="row">@Model?.sp_attack</td>
+                            <td scope="row">@Model?.defense</td>
+                            <td scope="row">@Model?.sp_defense</td>
+                            <td scope="row">@Model?.speed</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </table>
+</div>

@@ -56,6 +56,7 @@ namespace Dexter.Models
         public int generation { get; set; }
         public int is_legendary { get; set; }
         public bool Legendary => is_legendary == 1;
+        public string ImagePath => $"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{pokedex_number}.png";
 
         // Since this is a simple model mapping, doing it manually vs using a library like AutoMapper
         public static Pokemon FromCsv(string csvLine)
