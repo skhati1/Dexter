@@ -10,6 +10,32 @@ namespace Dexter.Models
         {
             _textInfo = new CultureInfo("en-US", false).TextInfo;
         }
+        public int X2AndX4WeaknessCount
+        {
+            get
+            {
+                int count = 0;
+                if (against_bug >= 2) count++;
+                if (against_dark >= 2) count++;
+                if (against_dragon >= 2) count++;
+                if (against_electric >= 2) count++;
+                if (against_fairy >= 2) count++;
+                if (against_fight >= 2) count++;
+                if (against_fire >= 2) count++;
+                if (against_flying >= 2) count++;
+                if (against_ghost >= 2) count++;
+                if (against_grass >= 2) count++;
+                if (against_ground >= 2) count++;
+                if (against_ice >= 2) count++;
+                if (against_normal >= 2) count++;
+                if (against_poison >= 2) count++;
+                if (against_psychic >= 2) count++;
+                if (against_rock >= 2) count++;
+                if (against_steel >= 2) count++;
+                if (against_water >= 2) count++;
+                return count;
+            }
+        }
         public double against_bug { get; set; }
         public double against_dark { get; set; }
         public double against_dragon { get; set; }

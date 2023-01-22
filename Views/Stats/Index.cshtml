@@ -20,7 +20,7 @@
             {
             @:data.addRow(["@chart.XAxisValues[i]", @chart.YAxisValues[i]]);
             }
-            @:var options = {"title": "@chart.ChartTitle", "width": 900, "height": 800 };
+            @:var options = {"title": "@chart.ChartTitle", "width": @chart.Width, "height": @chart.Height };
             @if (chart.Is3D)
             {
                 @:options.is3D = true;

@@ -16,6 +16,8 @@
         public string XLabel { get; set; }
         public List<int> YAxisValues { get; set; }
         public string YLabel { get; set; }
+        public int Width { get; set; }
+        public int Height { get; set; }
     }
     public class Statistics
     {

@@ -1,4 +1,5 @@
 using Dexter;
+using Dexter.BusinessLogic;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,6 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddTransient<DexterDbContext>();
+builder.Services.AddSingleton<DexterGraphData>();
 
 var app = builder.Build();
 
