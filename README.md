@@ -19,7 +19,7 @@ Dexter is a small Pokedex Application that shows users information about various
 Alternatively, if using a Mac or Linux system, you can:
 1. Clone repository using `git`
 2. In the repo directory, run `dotnet restore` to restore nuget packages
-3. Finally, run the `dotnet run` command
+3. Navigate to the `Dexter/` directory and run the `dotnet run` command
 
 Dexter will now be up and running at `localhost:7106` by default
 
