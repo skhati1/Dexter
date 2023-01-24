@@ -1,4 +1,5 @@
-﻿# Dexter
+﻿![Build Status](https://github.com/skhati1/Dexter/actions/workflows/dotnet.yml/badge.svg)
+# Dexter 
 
 Dexter is a small Pokedex Application that shows users information about various pokemons. It can visualize various statistics regarding Pokemons as well as let users see individual Pokemon in detail. Users can even create their own Pokemon in the UI.
 
