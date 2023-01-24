@@ -32,8 +32,6 @@ namespace Dexter
         }
 
         // POST: Pokemon/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("against_bug,against_dark,against_dragon,against_electric,against_fairy,against_fight,against_fire,against_flying,against_ghost,against_grass,against_ground,against_ice,against_normal,against_poison,against_psychic,against_rock,against_steel,against_water,Attack,base_egg_steps,base_happiness,base_total,CaptureRate,classfication,Defense,experience_growth,height_m,HP,japanese_name,Name,percentage_male,PokedexNumber,SpecialAttack,SpecialDefense,Speed,Type1,type2,weight_kg,generation,is_legendary")] Pokemon pokemon)
@@ -64,8 +62,6 @@ namespace Dexter
         }
 
         // POST: Pokemon/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("against_bug,against_dark,against_dragon,against_electric,against_fairy,against_fight,against_fire,against_flying,against_ghost,against_grass,against_ground,against_ice,against_normal,against_poison,against_psychic,against_rock,against_steel,against_water,Attack,base_egg_steps,base_happiness,base_total,CaptureRate,classfication,Defense,experience_growth,height_m,HP,japanese_name,Name,percentage_male,PokedexNumber,SpecialAttack,SpecialDefense,Speed,Type1,type2,weight_kg,generation,is_legendary")] Pokemon pokemon)
