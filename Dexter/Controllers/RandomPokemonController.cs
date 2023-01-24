@@ -1,5 +1,4 @@
-﻿using Dexter.Models;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace Dexter.Controllers
 {

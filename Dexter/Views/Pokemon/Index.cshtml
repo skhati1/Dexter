@@ -1,0 +1,264 @@
+﻿@model IEnumerable<Dexter.Models.Pokemon>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.against_bug)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.against_dark)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.against_dragon)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.against_electric)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.against_fairy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.against_fight)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.against_fire)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.against_flying)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.against_ghost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.against_grass)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.against_ground)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.against_ice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.against_normal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.against_poison)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.against_psychic)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.against_rock)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.against_steel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.against_water)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Attack)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.base_egg_steps)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.base_happiness)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.base_total)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CaptureRate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.classfication)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Defense)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.experience_growth)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.height_m)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HP)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.japanese_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.percentage_male)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SpecialAttack)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SpecialDefense)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Speed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Type1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.type2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.weight_kg)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.generation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.is_legendary)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.against_bug)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.against_dark)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.against_dragon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.against_electric)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.against_fairy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.against_fight)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.against_fire)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.against_flying)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.against_ghost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.against_grass)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.against_ground)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.against_ice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.against_normal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.against_poison)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.against_psychic)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.against_rock)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.against_steel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.against_water)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Attack)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.base_egg_steps)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.base_happiness)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.base_total)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CaptureRate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.classfication)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Defense)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.experience_growth)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.height_m)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.japanese_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.percentage_male)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SpecialAttack)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SpecialDefense)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Speed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.type2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.weight_kg)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.generation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.is_legendary)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.PokedexNumber">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.PokedexNumber">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.PokedexNumber">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

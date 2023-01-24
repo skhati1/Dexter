@@ -86,7 +86,7 @@ namespace Dexter.Models
         public string? weight_kg { get; set; }
         public int? generation { get; set; }
         public int is_legendary { get; set; }
-        public string ImagePath => $"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{PokedexNumber}.png";
+        public string ImagePath => this.PokedexNumber > 801 ? "" : $"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{PokedexNumber}.png";
 
         // Since this is a simple model mapping, doing it manually vs using a library like AutoMapper
         public static Pokemon FromCsv(string csvLine)
