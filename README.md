@@ -1,14 +1,14 @@
 ﻿# Dexter
 
-Dexter is a small Pokedex Application that shows users information about various pokemons. It can visualize various statistics regarding Pokemons as well as let users see individual Pokemon in detail.
+Dexter is a small Pokedex Application that shows users information about various pokemons. It can visualize various statistics regarding Pokemons as well as let users see individual Pokemon in detail. Users can even create their own Pokemon in the UI.
 
 # About the App
 
 - This is a ASP.NET Core MVC and Razor cshtml pages app that requires .NET 6.
-- It uses multiple LINQ queries demonstrated in `/BusinessLogic/DexterGraphData.cs' to generate various data groupings along with Google Charts JS to display them in Razor
+- It uses multiple LINQ queries demonstrated in `Dexter/BusinessLogic/DexterGraphData.cs' to generate various data groupings along with Google Charts JS to display them in Razor
 - EntityFrameworkCore as the ORM along with the EntityFramewokCore.SQLite nuget package to maintain DB Persistence
 - Dexter.Test project contains Unit Tests for the business logic in Dexter.BusinessLogic
-- Validation Code also provided as part of the repo code
+- Validation Code for view model implemented using `FluentValidation.AspNetCore` as demonstrated in `Dexter/Validators` 
 
 # How to Run
 
@@ -39,8 +39,5 @@ Dexter will now be up and running at `localhost:7106` by default
 #### Pokedex Page
 ![Pokedex](https://github.com/skhati1/Dexter/blob/main/Docs/pokedex.png)
 
-## TODO
-
-Validation Test
-Ensure All Unit Tests Pass when running together vs individually
-Post endpoint to test validations
+### Create Page
+![Pokemon](https://github.com/skhati1/Dexter/blob/main/Docs/create.png)
