@@ -5,10 +5,10 @@ Dexter is a small Pokedex Application that shows users information about various
 # About the App
 
 - This is a ASP.NET Core MVC and Razor cshtml pages app that requires .NET 6.
-- It uses multiple LINQ queries demonstrated in `Dexter/BusinessLogic/DexterGraphData.cs' to generate various data groupings along with Google Charts JS to display them in Razor
+- It uses multiple LINQ queries demonstrated in `Dexter/BusinessLogic/DexterGraphData.cs` to generate various data groupings along with Google Charts JS to display them in Razor
 - EntityFrameworkCore as the ORM along with the EntityFramewokCore.SQLite nuget package to maintain DB Persistence
 - Dexter.Test project contains Unit Tests for the business logic in Dexter.BusinessLogic
-- Validation Code for view model implemented using `FluentValidation.AspNetCore` as demonstrated in `Dexter/Validators` 
+- Validation Code for view model implemented using `FluentValidation.AspNetCore` NuGet package as demonstrated in `Dexter/Validators` 
 
 # How to Run
 
@@ -26,18 +26,18 @@ Dexter will now be up and running at `localhost:7106` by default
 ## Pages
 
 #### Home Page 
-![Home](https://github.com/skhati1/Dexter/blob/main/Docs/home.png)
+![Home](https://github.com/skhati1/Dexter/blob/main/Dexter/Docs/home.png)
 
 #### Stats Page
-![Stats1](https://github.com/skhati1/Dexter/blob/main/Docs/stats1.png)
-![Stats2](https://github.com/skhati1/Dexter/blob/main/Docs/stats2.png)
-![Stats3](https://github.com/skhati1/Dexter/blob/main/Docs/stats3.png)
+![Stats1](https://github.com/skhati1/Dexter/blob/main/Dexter/Docs/stats1.png)
+![Stats2](https://github.com/skhati1/Dexter/blob/main/Dexter/Docs/stats2.png)
+![Stats3](https://github.com/skhati1/Dexter/blob/main/Dexter/Docs/stats3.png)
 
 #### Random Page
-![Random](https://github.com/skhati1/Dexter/blob/main/Docs/random.png)
+![Random](https://github.com/skhati1/Dexter/blob/main/Dexter/Docs/random.png)
 
 #### Pokedex Page
-![Pokedex](https://github.com/skhati1/Dexter/blob/main/Docs/pokedex.png)
+![Pokedex](https://github.com/skhati1/Dexter/blob/main/Dexter/Docs/pokedex.png)
 
 ### Create Page
-![Pokemon](https://github.com/skhati1/Dexter/blob/main/Docs/create.png)
+![Pokemon](https://github.com/skhati1/Dexter/blob/main/Dexter/Docs/create.png)
