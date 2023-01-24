@@ -1,13 +1,25 @@
 using Dexter;
 using Dexter.BusinessLogic;
+using Dexter.Models;
+using Dexter.Validators;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddFluentValidationAutoValidation();
+builder.Services.AddFluentValidationClientsideAdapters();
+
+// Adding app specific dependencies here
 builder.Services.AddTransient<DexterDbContext>();
 builder.Services.AddSingleton<DexterGraphData>();
+builder.Services.AddScoped<IValidator<Pokemon>, PokemonValidator>();
 
 var app = builder.Build();
 

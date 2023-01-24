@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Dexter.Models
 {
@@ -48,34 +49,44 @@ namespace Dexter.Models
         public double against_rock { get; set; }
         public double against_steel { get; set; }
         public double against_water { get; set; }
-        public int attack { get; set; }
+        [Column("attack")]
+        public int Attack { get; set; }
         public int base_egg_steps { get; set; }
         public int base_happiness { get; set; }
         public int base_total { get; set; }
-        public string? capture_rate { get; set; }
+        [Column("capture_rate")]
+        public int? CaptureRate { get; set; }
         public string? classfication { get; set; }
-        public int defense { get; set; }
+        [Column("defense")]
+        public int Defense { get; set; }
         public Int32 experience_growth { get; set; }
         public string? height_m { get; set; }
-        public int hp { get; set; }
+        [Column("hp")]
+        public int HP { get; set; }
         public string? japanese_name { get; set; }
-        public string name { get; set; }
+        [Column("name")]
+        public string Name { get; set; }
         public string? percentage_male { get; set; }
         [Key]
-        public int pokedex_number { get; set; }
-        public int sp_attack { get; set; }
-        public int sp_defense { get; set; }
-        public int speed { get; set; }
-        public string type1 { get; set; }
+        [Column("pokedex_number")]
+        public int PokedexNumber { get; set; }
+        [Column("sp_attack")]
+        public int SpecialAttack { get; set; }
+        [Column("sp_defense")]
+        public int SpecialDefense { get; set; }
+        [Column("speed")]
+        public int Speed { get; set; }
+        [Column("type1")]
+        public string Type1 { get; set; }
         public string? type2 { get; set; }
         public string TypesString
         {
-            get => $"{type1.ToTitleCase()} {(type2?.Length > 0 ? " and " + type2.ToTitleCase() : "")}";
+            get => $"{Type1.ToTitleCase()} {(type2?.Length > 0 ? " and " + type2.ToTitleCase() : "")}";
         }
         public string? weight_kg { get; set; }
-        public int generation { get; set; }
+        public int? generation { get; set; }
         public int is_legendary { get; set; }
-        public string ImagePath => $"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{pokedex_number}.png";
+        public string ImagePath => $"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{PokedexNumber}.png";
 
         // Since this is a simple model mapping, doing it manually vs using a library like AutoMapper
         public static Pokemon FromCsv(string csvLine)
@@ -100,24 +111,24 @@ namespace Dexter.Models
             newPokemon.against_rock = Convert.ToDouble(values[16]);
             newPokemon.against_steel = Convert.ToDouble(values[17]);
             newPokemon.against_water = Convert.ToDouble(values[18]);
-            newPokemon.attack = Convert.ToInt16(values[19]);
+            newPokemon.Attack = Convert.ToInt16(values[19]);
             newPokemon.base_egg_steps = Convert.ToInt16(values[20]);
             newPokemon.base_happiness = Convert.ToInt16(values[21]);
             newPokemon.base_total = Convert.ToInt16(values[22]);
-            newPokemon.capture_rate = Convert.ToString(values[23]);
+            newPokemon.CaptureRate = !String.IsNullOrEmpty(values[23]) ? Convert.ToInt32(values[23]) : null;
             newPokemon.classfication = Convert.ToString(values[24]);
-            newPokemon.defense = Convert.ToInt16(values[25]);
+            newPokemon.Defense = Convert.ToInt16(values[25]);
             newPokemon.experience_growth = Convert.ToInt32(values[26]);
             newPokemon.height_m = Convert.ToString(values[27]);
-            newPokemon.hp = Convert.ToInt16(values[28]);
+            newPokemon.HP = Convert.ToInt16(values[28]);
             newPokemon.japanese_name = Convert.ToString(values[29]);
-            newPokemon.name = Convert.ToString(values[30]);
+            newPokemon.Name = Convert.ToString(values[30]);
             newPokemon.percentage_male = Convert.ToString(values[31]);
-            newPokemon.pokedex_number = Convert.ToInt16(values[32]);
-            newPokemon.sp_attack = Convert.ToInt16(values[33]);
-            newPokemon.sp_defense = Convert.ToInt16(values[34]);
-            newPokemon.speed = Convert.ToInt16(values[35]);
-            newPokemon.type1 = Convert.ToString(values[36]);
+            newPokemon.PokedexNumber = Convert.ToInt16(values[32]);
+            newPokemon.SpecialAttack = Convert.ToInt16(values[33]);
+            newPokemon.SpecialDefense = Convert.ToInt16(values[34]);
+            newPokemon.Speed = Convert.ToInt16(values[35]);
+            newPokemon.Type1 = Convert.ToString(values[36]);
             newPokemon.type2 = Convert.ToString(values[37]);
             newPokemon.weight_kg = Convert.ToString(values[38]);
             newPokemon.generation = Convert.ToInt16(values[39]);

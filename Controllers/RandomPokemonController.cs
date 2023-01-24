@@ -19,7 +19,7 @@ namespace Dexter.Controllers
         {
             var allPokemons = _context.Pokemons.ToList();
             var randomIndex = _rand.Next(0, allPokemons.Count() - 1);
-            var randomPokemon = allPokemons.First(p => p.pokedex_number == randomIndex);
+            var randomPokemon = allPokemons.First(p => p.PokedexNumber == randomIndex);
             return View("Index", randomPokemon);
         }
     }

@@ -8,12 +8,12 @@
     <h1 class="display-4">Selected Random Pokemon</h1>
     <!-- Use this to fetch a random pokemon of the day from DB and show details about it. Unit Test randomness -->
     <div id="pokemon-report">
-        <h2>@Model.pokedex_number | @Model.name | @Model.japanese_name</h2>
+        <h2>@Model.PokedexNumber | @Model.Name | @Model.japanese_name</h2>
         <br />
         <h3>Type: @Model.TypesString</h3>
         <br />
-        <img src="@Url.Content(Model.ImagePath)" alt="Image of the Pokemon @Model.name" height="400" width="400" />
-        <a href="/Pokedex/@Model.pokedex_number">View Pokedex Entry</a>
+        <img src="@Url.Content(Model.ImagePath)" alt="Image of the Pokemon @Model.Name" height="400" width="400" />
+        <a href="/Pokedex/@Model.PokedexNumber">View Pokedex Entry</a>
         <p>This is a @Model.classfication</p>
         <table class="table">
             <thead>
@@ -28,12 +28,12 @@
             </thead>
             <tbody>
                 <tr>
-                    <td scope="row">@Model.hp</td>
-                    <td scope="row">@Model.attack</td>
-                    <td scope="row">@Model.sp_attack</td>
-                    <td scope="row">@Model.defense</td>
-                    <td scope="row">@Model.sp_defense</td>
-                    <td scope="row">@Model.speed</td>
+                    <td scope="row">@Model.HP</td>
+                    <td scope="row">@Model.Attack</td>
+                    <td scope="row">@Model.SpecialAttack</td>
+                    <td scope="row">@Model.Defense</td>
+                    <td scope="row">@Model.SpecialDefense</td>
+                    <td scope="row">@Model.Speed</td>
                 </tr>
             </tbody>
         </table>

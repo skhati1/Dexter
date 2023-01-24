@@ -13,7 +13,7 @@ namespace Dexter.BusinessLogic
         {
             var groupedTypes = _context.Pokemons
                 .Where(p => p.is_legendary == 1)
-                .OrderByDescending(p => p.speed)
+                .OrderByDescending(p => p.Speed)
                 .Take(10)
                 .ToList();
 
@@ -23,9 +23,9 @@ namespace Dexter.BusinessLogic
                 ChartLabel = "This graph the 10 fastest legendary Pokemon we have so far.",
                 ChartTitle = "10 Fastest Legendary Pokemons",
                 ChartType = TypeOfChart.BarChart,
-                XAxisValues = groupedTypes.Select(g => g.name).ToList(),
+                XAxisValues = groupedTypes.Select(g => g.Name).ToList(),
                 XLabel = "Pokemon Type",
-                YAxisValues = groupedTypes.Select(g => g.speed).ToList(),
+                YAxisValues = groupedTypes.Select(g => g.Speed).ToList(),
                 YLabel = "Speed Points",
                 Width = 900,
                 Height = 500,
@@ -51,7 +51,7 @@ namespace Dexter.BusinessLogic
                 ChartTitle = "Groups of Most Weakest Pokemon Based on x2 and x4 Weaknesses",
                 ChartType = TypeOfChart.BarChart,
                 Is3D = true,
-                XAxisValues = sortedPokemons.Select(p => String.Join(", ", p.Select(p => p.name))).ToList(),
+                XAxisValues = sortedPokemons.Select(p => String.Join(", ", p.Select(p => p.Name))).ToList(),
                 YAxisValues = sortedPokemons.Select(p => p.Key).ToList(), // Can safely cast to int as all numbers being added are even whole numbers of 2 so no .5 decimals in this linq query
                 Width = 1100,
                 Height = 500,
@@ -61,7 +61,7 @@ namespace Dexter.BusinessLogic
         public DexterChart GetTypePercentDistribution()
         {
             var groupedTypes = _context.Pokemons
-                .Select(p => p.type1)
+                .Select(p => p.Type1)
                 .AsEnumerable()
                 .GroupBy(p => p)
                 .AsEnumerable();

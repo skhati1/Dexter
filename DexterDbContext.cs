@@ -1,9 +1,5 @@
 ﻿using Dexter.Models;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Reflection.Metadata;
 
 namespace Dexter
 {
@@ -25,6 +21,7 @@ namespace Dexter
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             /* This code was used to generate the intial migration which is now stored in the migration file itself
+             * so saving it off here commented in case needed in the future
              * 
             
             List<Pokemon> seedData = File.ReadAllLines("seed_input.csv")

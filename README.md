@@ -25,7 +25,7 @@ Dexter will now be up and running at `localhost:7106` by default
 
 ## Pages
 
-#### Home Page
+#### Home Page 
 ![Home](https://github.com/skhati1/Dexter/blob/main/Docs/home.png)
 
 #### Stats Page
@@ -43,3 +43,4 @@ Dexter will now be up and running at `localhost:7106` by default
 
 Validation Test
 Ensure All Unit Tests Pass when running together vs individually
+Post endpoint to test validations

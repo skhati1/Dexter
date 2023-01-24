@@ -18,7 +18,7 @@ namespace Dexter.Controllers
         [HttpGet("{id}")]
         public IActionResult Index([FromRoute] int? id) {
             if (id == null) return View();
-            var result = _context.Pokemons.FirstOrDefault(p => p.pokedex_number == id);
+            var result = _context.Pokemons.FirstOrDefault(p => p.PokedexNumber == id);
 
             if (result == null) return View();
 

@@ -11,7 +11,7 @@
     <table class="table">
         <tr>
             <td>
-                <p>@Model?.name | @Model?.japanese_name. A @Model?.TypesString Pokemon!</p>
+                <p>@Model?.Name | @Model?.japanese_name. A @Model?.TypesString Pokemon!</p>
                 <img src="@Url.Content(Model?.ImagePath)" alt="Pokemon Image" height="400" width="400" />
             </td>
             <td style="vertical-align: middle">
@@ -28,12 +28,12 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td scope="row">@Model?.hp</td>
-                            <td scope="row">@Model?.attack</td>
-                            <td scope="row">@Model?.sp_attack</td>
-                            <td scope="row">@Model?.defense</td>
-                            <td scope="row">@Model?.sp_defense</td>
-                            <td scope="row">@Model?.speed</td>
+                            <td scope="row">@Model?.HP</td>
+                            <td scope="row">@Model?.Attack</td>
+                            <td scope="row">@Model?.SpecialAttack</td>
+                            <td scope="row">@Model?.Defense</td>
+                            <td scope="row">@Model?.SpecialDefense</td>
+                            <td scope="row">@Model?.Speed</td>
                         </tr>
                     </tbody>
                 </table>
@@ -42,7 +42,7 @@
     </table>
     <p>Height: @Model?.height_m meters | Weight: @Model?.weight_kg kg</p>
     <p>This is a @Model?.classfication</p>
-    <p>Capture Rate: @Model?.capture_rate</p>
+    <p>Capture Rate: @Model?.CaptureRate</p>
 
     <!-- Use Reflection to Show Weakness and Strengths -->
     

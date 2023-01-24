@@ -19,6 +19,7 @@ namespace Dexter.Controllers
         public IActionResult Index()
         {
             var allPokemons = _context.Pokemons.ToList();
+            _context.Pokemons.First().HP = -1;
             Statistics result = new Statistics();
 
             // Top Ten Fastest Legendary Pokemon 
